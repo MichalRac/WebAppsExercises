@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    </head>
-    <body>
-        <div style="float:left">
-            <h1>Books</h1>
-            <a href="edit_book.html"><button>New</button></a>
-            <div id="books">
-            </div>
-            <a href="index.html"><button>Back</button></a>
-        </div>
+<head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <td id="book_id"/></td>
+        <td id="book_author"/></td>
+        <td id="book_title"/></td>
 
-        <div style="float:right">
-            <h3>Marked for reading</h3>
-            <div id="marked_books">
-            </div>
-        </div>
+        <td id="img_photo"/>
+    </tr>
+</table>
+<a href="list_books.html"><button>Back</button></a>
 
-    </body>
+<script>
+    function get(name) {
+        if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+            return decodeURIComponent(name[1]);
+    }
+
+    function update() {
+        var book_id = get('book_id');
+        if (book_id != null) {
+            $.getJSON('books/ajax', {'command': 'find_book', 'book_id': get('book_id')}, function (data) {
+                var book = $('#book_id');
+                $('<p>').text(data.title).appendTo(book);
+
+                var book = $(data.title).appendTo($('#book_id'));
+                book.text(data.title);
+                $('#book_id').text(data.id);
+                $('#book_author').text(data.author);
+                $('#book_title').text(data.title);
+
+                var img = $('#img_photo');
+                var img_uri = "cover?author=" + data.author + "&title=" + data.title;
+                $('<img>').attr('src', encodeURI(img_uri)).appendTo(img);
+            });
+        }
+    }
+
+    $(document).ready(function () {
+        update();
+    });
+</script>
 </html>
