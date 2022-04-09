@@ -152,7 +152,23 @@ public class BookResource {
         }
         return books;
     }
-    
+
+    @GET
+    @Path("delete")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response deleteBook_Query(@QueryParam("book_id") Integer bookId) {
+        getBookContext().deleteBook(bookId);
+        return Response.ok().build();
+    }
+
+    @GET
+    @Path("delete/{id:[0-9]+}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response deleteBook_Path(@PathParam("id") Integer bookId) {
+        getBookContext().deleteBook(bookId);
+        return Response.ok().build();
+    }
+
     private BooksContext getBookContext() {
         BooksContext bookContext = (BooksContext) context.getAttribute(BOOK_CONTEXT);
         if (bookContext == null) {

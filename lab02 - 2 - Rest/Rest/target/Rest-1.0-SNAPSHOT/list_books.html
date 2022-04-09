@@ -52,6 +52,36 @@
                         var edit_td = $('<td>').appendTo(row);
                         var edit_a = $('<a>').attr('href', encodeURI(edit_uri)).appendTo(edit_td);
                         $('<button>').text("Edit").appendTo(edit_a);
+
+                        //Delete Query button
+                        var delete_td = $('<td>').appendTo(row);
+                        var delete_form = $('<form>').appendTo(delete_td).attr('method', 'POST');
+
+                        $('<input>').appendTo(delete_form).attr('type', 'hidden').attr('name', 'deleted_book').attr('value', book.id);
+                        $('<input>').appendTo(delete_form).attr('type', 'submit').attr('value', 'DeleteQuery');
+
+                        delete_form.submit(function (event) {
+                            event.preventDefault();
+                            var deleted_book = delete_form.find("input[name='deleted_book']").val();
+                            $.get('resources/books/delete', {'book_id': deleted_book}, function (data) {
+                                location.reload();
+                            });
+                        });
+
+                        //Delete Path button
+                        var delete_td = $('<td>').appendTo(row);
+                        var delete_form = $('<form>').appendTo(delete_td).attr('method', 'POST');
+
+                        $('<input>').appendTo(delete_form).attr('type', 'hidden').attr('name', 'deleted_book').attr('value', book.id);
+                        $('<input>').appendTo(delete_form).attr('type', 'submit').attr('value', 'DeletePath');
+
+                        delete_form.submit(function (event) {
+                            event.preventDefault();
+                            var deleted_book = delete_form.find("input[name='deleted_book']").val();
+                            $.get('resources/books/delete/' + deleted_book, function (data) {
+                                location.reload();
+                            });
+                        });
                     });
                 });
             }
