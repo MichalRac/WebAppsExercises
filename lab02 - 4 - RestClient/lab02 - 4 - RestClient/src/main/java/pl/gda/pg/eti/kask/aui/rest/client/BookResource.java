@@ -46,10 +46,14 @@ public class BookResource {
         return root.path("find").path(bookId.toString()).request().get(Book.class);
     }
 
-    public int deleteBook(Integer bookId)
+    public int deleteBookQuery(Integer bookId)
     {
         return root.path("delete").queryParam("book_id", bookId.toString()).request().get().getStatus();
-        //root.path("delete").path(bookId.toString()).request().get();
+    }
+
+    public int deleteBookPath(Integer bookId)
+    {
+        return root.path("delete").path(bookId.toString()).request().get().getStatus();
     }
 
 }

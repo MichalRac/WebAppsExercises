@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <b>Miasto:</b><div id="drop_down"/>
+    </body>
+
+    <script>
+        function load()
+        {
+            // Load all city identifiers
+            $.getJSON('resources/city/list', function (data)
+            {
+                // Prepare dropdown
+                $('#drop_down').html('');
+                var select = $('<select>').appendTo($('#drop_down'));
+                // Populate dropdown
+                $.each(data, function(i, city)
+                {
+                    $('<option>').attr('value', city.id).text(city.name).appendTo(select);
+                })
+                select.attr('id', 'select');
+
+                // Handle city change event
+                $('#select').change( function () {
+                    $.getJSON('resources/city/find', {'city_id': $(this).val()}, function (city) {
+
+                        var lat = city.latitude;
+                        var lon = city.longitude;
+                        var API_KEY = '2508abecb6d9037229e719a6adc445af';
+
+                        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+                            .then(response => response.json())
+                            .then(data => {
+                                // Parse and log
+                                console.log('Weather at ' + data['name'] + ' is ' + data['weather'][0]['main']);
+                                console.log(data['name'] + ' temperture: ' + data['main']['temp']);
+                            } );
+                    });
+                });
+            });
+        }
+
+        $(document).ready(function () {
+            load()
+        });
+    </script>
+</html>

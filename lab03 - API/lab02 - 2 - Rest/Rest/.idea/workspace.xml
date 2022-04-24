@@ -10,18 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcf00baf-026f-46f8-9915-c6ce47a9ae34" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/gda/pg/eti/kask/aui/rest/servlet/BooksContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/gda/pg/eti/kask/aui/rest/servlet/BooksContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/BookResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/BookResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab02 - 2 - Rest/Rest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab02 - 2 - Rest/Rest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab02 - 2 - Rest/Rest/src/main/java/pl/gda/pg/eti/kask/aui/rest/servlet/BooksContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab02 - 2 - Rest/Rest/src/main/java/pl/gda/pg/eti/kask/aui/rest/servlet/BooksContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/BookResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab02 - 4 - RestClient/lab02 - 4 - RestClient/src/main/java/pl/gda/pg/eti/kask/aui/rest/client/BookResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -50,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lab02 - 4 - RestClient/lab02 - 4 - RestClient" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/lab02 - 2 - Rest/Rest" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -161,6 +168,7 @@
       <workItem from="1649522672088" duration="109000" />
       <workItem from="1649523166119" duration="5939000" />
       <workItem from="1650753221933" duration="56000" />
+      <workItem from="1650753543608" duration="5826000" />
     </task>
     <servers />
   </component>

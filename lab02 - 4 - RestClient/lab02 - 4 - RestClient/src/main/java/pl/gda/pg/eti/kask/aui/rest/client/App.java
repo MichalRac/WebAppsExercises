@@ -13,7 +13,7 @@ public class App {
     public static void main(String[] args) {
         BookResource bookResource = new BookResource("http://localhost:8080/Rest-1.0-SNAPSHOT", "psysiu", "psysiu");
 
-        System.out.println(bookResource.saveBook(20, "Gra121232321", "Card"));
+        System.out.println(bookResource.saveBook(1, "Gra121232321", "Card"));
 
         bookResource.listBooks().forEach((book) -> {
             System.out.println(book.getTitle());
@@ -28,7 +28,7 @@ public class App {
 
         try{
             int id = Integer.parseInt(idString);
-            bookResource.deleteBook(id);
+            bookResource.deleteBookQuery(id);
         }
         catch (NumberFormatException ex)
         {
